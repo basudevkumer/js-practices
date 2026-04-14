@@ -1,22 +1,20 @@
+var getMinDistance = function(nums, target, start) {
+     
+     let mins =  Infinity;
 
-var twoSum = function(nums, target) {
-     let map = {};
+     for(let  i = 0 ; i < nums.length ; i++){
 
-     for(let i = 0 ;  i< nums.length ; i++){
-        const partner =  target - nums[i]
-
-        if(map[partner] !== undefined){
-
-            return [map[partner], i]
+        if(nums[i] === target){
+            let distance =  Math.abs(i - start)
+            mins =  Math.min(mins, distance)
         }
+        
 
-        map[nums[i]] = i 
      }
+       console.log( mins);
+       
+
 };
 
 
- let results =   twoSum([500,20,85,1,2,40,3,5,35,4,88,100,50],40)
-
-console.log(results)
-
-
+getMinDistance([1,1,1,1,1,1,1,1,1,1],1,0)
